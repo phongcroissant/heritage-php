@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam classAttributeIconSize 0
+skinparam class {
+BackgroundColor PaleGreen
+BorderColor Blue
+ArrowColor Red
+}
+
+class Vehicule {
+#marque:chaine
+#modele:chaine
+#vitesseMax:entier
+#prixJournalier:réel
++afficherInfos()
++calculerCoutLocation(nbJours : entier)
+}
+class Voiture {
+-nombrePortes:entier
+-typeCarburant:chaine
++calculerCoutLocation(int $nbJours) : ajoute une taxe de 10 % si le véhicule est électrique.
+}
+class Moto {
+-typeGuidon:chaine
++calculerCoutLocation(int $nbJours) : applique une remise de 5 % pour une location deplus de 7 jours.
+}
+class Location {
+-nbJours:entier
++louerVehicule(vehicule : Vehicule)
++afficherDetailsLocation()
+}
+Moto--|>Vehicule
+Voiture--|>Vehicule
+Location "0..*"-->"0..*"Vehicule
+
+@enduml
