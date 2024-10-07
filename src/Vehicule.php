@@ -25,8 +25,8 @@ class Vehicule
     public function afficherInfos(){
         dump("Marque: $this->marque. Modele: $this->modele. Vitesse Max: $this->vitesseMax. Prix Journalier: $this->prixJournalier");
     }
-    public function calculerCoutLocation(int $nbJours) {
-        dump($this->prixJournalier*$nbJours);
+    public function calculerCoutLocation(int $nbJours):float {
+        return($this->prixJournalier*$nbJours);
     }
     public function getMarque(): string
     {

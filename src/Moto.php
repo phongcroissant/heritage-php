@@ -18,11 +18,13 @@ class Moto extends Vehicule
     {
         dump("Marque: $this->marque. Modele: $this->modele. Vitesse Max: $this->vitesseMax. Prix Journalier: $this->prixJournalier. Type Guidon: $this->typeGuidon");
     }
-    public function calculerCoutLocation(int $nbJours):void
+    public function calculerCoutLocation(int $nbJours):float
     {
         if($nbJours > 7){
-            dump(($this->prixJournalier*$nbJours)*0.95);
+            return $this->prixJournalier*$nbJours*0.95;
         }
+        return($this->prixJournalier*$nbJours);
+
     }
 
     public function getTypeGuidon(): string

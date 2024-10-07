@@ -13,11 +13,12 @@ class Voiture extends Vehicule
         $this->typeCarburant = $typeCarburant;
     }
 
-    public function calculerCoutLocation(int $nbJours)
+    public function calculerCoutLocation(int $nbJours):float
     {
         if ($this->typeCarburant == "électrique") {
-            dump(($this->prixJournalier * $nbJours) * 1.1);
+            return(($this->prixJournalier * $nbJours) * 1.1);
         }
+        return $this->prixJournalier * $nbJours;
     }
 
     public function afficherInfos()
